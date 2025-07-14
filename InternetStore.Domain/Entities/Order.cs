@@ -9,9 +9,17 @@ namespace InternetStore.Domain.Entities
 {
     public class Order
     {
+        public Order(Guid customerId, List<OrderItem> items)
+        {
+            this.Id = Guid.NewGuid();
+            this.CustomerId = customerId;
+            this.Items = items ?? throw new ArgumentNullException(nameof(items), "Items cannot be null.");
+            this.CreatedAt = DateTime.UtcNow;
+            this.Status = OrderStatus.Draft;
+        }
         public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public OrderStatus Status { get; set; } = OrderStatus.Draft;
+        public DateTime CreatedAt { get; set; }
+        public OrderStatus Status { get; set; }
 
         public Guid CustomerId { get; set; }
 
