@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,18 +9,51 @@ namespace InternetStore.Domain.Entities
 {
     internal abstract class Customer
     {
-        Guid Id { get; set; }
+        public Customer(FullName fullName, Email email)
+        {
+            if (fullName == null)
+            {
+                throw new ArgumentNullException(nameof(fullName), "Full name cannot be null.");
+            }
 
-        string FirstName { get; set; }
+            if (email == null)
+            {
+                throw new ArgumentNullException(nameof(email), "Email cannot be null.");
+            }
 
-        string LastName { get; set; }
+            this.Id = Guid.NewGuid();
+            this.FullName = fullName;
+            this.Email = email;
+        }
 
-        string Email { get; set; }
+        public Guid Id { get; private set; }
 
-        string PhoneNumber { get; set; }
+        public Email Email { get; private set; }
 
-        List<Order> Orders { get; set; } = new List<Order>();
+        public string? PhoneNumber { get; private set; }
 
-        DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public List<Order> Orders { get; private set; } = new List<Order>();
+
+        public DateTime Registered { get; private set; } = DateTime.UtcNow;
+
+        public DateTime LastLogin { get; private set; } = DateTime.UtcNow;
+
+        public void UpdateName(FullName fullName)
+        {
+            if (fullName == null)
+            {
+                throw new ArgumentNullException(nameof(fullName), "Full name cannot be null.");
+            }
+            this.FullName = fullName;
+        }
+
+        public void UpdateEmail(Email email)
+        {
+            if (email == null)
+            {
+                throw new ArgumentNullException(nameof(email), "Email cannot be null.");
+            }
+            this.Email = email;
+        }
     }
 }

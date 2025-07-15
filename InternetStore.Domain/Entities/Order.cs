@@ -17,13 +17,13 @@ namespace InternetStore.Domain.Entities
             this.CreatedAt = DateTime.UtcNow;
             this.Status = OrderStatus.Draft;
         }
-        public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public OrderStatus Status { get; set; }
+        public Guid Id { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public OrderStatus Status { get; private set; }
 
-        public Guid CustomerId { get; set; }
+        public Guid CustomerId { get; private set; }
 
-        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public List<OrderItem> Items { get; private set; } = new List<OrderItem>();
 
         public decimal TotalAmount
         {

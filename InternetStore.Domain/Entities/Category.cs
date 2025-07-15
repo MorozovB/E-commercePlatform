@@ -8,13 +8,24 @@ namespace InternetStore.Domain.Entities
 {
     public class Category
     {
-        Guid Id { get; set; }
+        public Category(string title, string? description = null)
+        {
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                throw new ArgumentException("Category title cannot be empty.", nameof(title));
+            }
+            this.Id = Guid.NewGuid();
+            this.Title = title;
+            this.Description = description;
+        }
 
-        string? Title { get; set; }
+        public Guid Id { get; private set; }
 
-        string? Description { get; set; }
+        public string? Title { get; private set; }
 
-        List<Product> Products { get; set; } = new List<Product>();
+        public string? Description { get; private set; }
+
+        public List<Product> Products { get; private set; } = new List<Product>();
 
 
         public void Rename(string newTitle)

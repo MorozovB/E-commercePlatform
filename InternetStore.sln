@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetStore", "InternetSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetStore.Domain", "InternetStore.Domain\InternetStore.Domain.csproj", "{9795F88E-0E43-4783-9F1F-E80D34D44503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetStore.Application", "InternetStore.Application\InternetStore.Application.csproj", "{58585CEA-AB74-4DC4-AC99-1B48E8267F7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9795F88E-0E43-4783-9F1F-E80D34D44503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9795F88E-0E43-4783-9F1F-E80D34D44503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9795F88E-0E43-4783-9F1F-E80D34D44503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58585CEA-AB74-4DC4-AC99-1B48E8267F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58585CEA-AB74-4DC4-AC99-1B48E8267F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58585CEA-AB74-4DC4-AC99-1B48E8267F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58585CEA-AB74-4DC4-AC99-1B48E8267F7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
