@@ -7,7 +7,7 @@ using InternetStore.Domain.Entities;
 
 namespace InternetStore.Domain.Interfaces
 {
-    internal interface IProductRepository
+    public interface IProductRepository
     {
         /// <summary>
         /// Retrieves a product by its unique identifier.
@@ -30,19 +30,19 @@ namespace InternetStore.Domain.Interfaces
         Task<List<Product>> FindByCategoryIdAsync(Guid categoryId);
 
         /// <summary>
-        /// Adds a new product to the repository.
+        /// Adds a new product.
         /// </summary>
         /// <param name="product">The product to add.</param>
         Task AddProductAsync(Product product);
 
         /// <summary>
-        /// Updates an existing product in the repository.
+        /// Updates an existing product.
         /// </summary>
         /// <param name="product">The product with updated information.</param>
         Task UpdateProductAsync(Product product);
 
         /// <summary>
-        /// Deletes a product from the repository.
+        /// Deletes a product.
         /// </summary>
         /// <param name="productId">The unique identifier of the product to delete.</param>
         Task DeleteProductAsync(Guid productId);

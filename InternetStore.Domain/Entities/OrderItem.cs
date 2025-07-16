@@ -8,7 +8,7 @@ namespace InternetStore.Domain.Entities
 {
     public class OrderItem
     {
-        public OrderItem(Guid itemId, string itemName, decimal price, int quantity)
+        public OrderItem(Guid itemId, string itemName, decimal price, int quantity, Guid orderId)
         {
             if (itemId == Guid.Empty)
             {
@@ -23,6 +23,7 @@ namespace InternetStore.Domain.Entities
                 this.ItemName = itemName;
                 this.ItemPrice = price;
                 this.Quantity = quantity;
+                this.OrderId = orderId;
             }
         }
 
@@ -50,7 +51,7 @@ namespace InternetStore.Domain.Entities
 
         public Guid OrderId { get; private set; }
 
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
 
         public void ChangeQuantity(int newQuantity)
         {

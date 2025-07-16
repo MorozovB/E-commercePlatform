@@ -4,12 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InternetStore.Domain.ValueObjects;
 
 namespace InternetStore.Domain.Entities
 {
-    internal abstract class Customer
+    public abstract class Customer
     {
-        public Customer(FullName fullName, Email email)
+        protected Customer(FullName fullName, Email email)
         {
             if (fullName == null)
             {
@@ -30,7 +31,9 @@ namespace InternetStore.Domain.Entities
 
         public Email Email { get; private set; }
 
-        public string? PhoneNumber { get; private set; }
+        public FullName FullName { get; private set; }
+
+        public string? PhoneNumber { get; private set; } = null;
 
         public List<Order> Orders { get; private set; } = new List<Order>();
 

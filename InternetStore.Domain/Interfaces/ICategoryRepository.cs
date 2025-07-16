@@ -7,7 +7,7 @@ using InternetStore.Domain.Entities;
 
 namespace InternetStore.Domain.Interfaces
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository
     {
         /// <summary>
         /// Retrieves a category by its unique identifier.
